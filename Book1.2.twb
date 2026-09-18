@@ -1,0 +1,632 @@
+<?xml version='1.0' encoding='utf-8' ?>
+
+<!-- build 20262.26.0603.1643                               -->
+<workbook original-version='18.1' source-build='2026.2.0 (20262.26.0603.1643)' source-platform='win' version='18.1' xmlns:user='http://www.tableausoftware.com/xml/user'>
+  <document-format-change-manifest>
+    <AnimationOnByDefault />
+    <MapboxVectorStylesAndLayers />
+    <MarkAnimation />
+    <ObjectModelEncapsulateLegacy />
+    <ObjectModelTableType />
+    <SchemaViewerObjectModel />
+    <SheetIdentifierTracking />
+    <SortTagCleanup />
+    <WindowsPersistSimpleIdentifiers />
+  </document-format-change-manifest>
+  <preferences>
+    <preference name='ui.encoding.shelf.height' value='24' />
+    <preference name='ui.shelf.height' value='26' />
+  </preferences>
+  <datasources>
+    <datasource caption='actvtydataset' inline='true' name='federated.07k3rlo0et9x1p18u7ji017pgjt5' version='18.1'>
+      <connection class='federated'>
+        <named-connections>
+          <named-connection caption='actvtydataset' name='excel-direct.0jltcv00tq8wwu18wriqi0nch3tw'>
+            <connection class='excel-direct' cleaning='no' compat='no' dataRefreshTime='' filename='C:/Users/annam/Downloads/actvtydataset.xlsx' interpretationMode='0' password='' server='' validate='no' />
+          </named-connection>
+        </named-connections>
+      </connection>
+      <layout dim-ordering='alphabetic' measure-ordering='alphabetic' show-structure='true' />
+      <semantic-values>
+        <semantic-value key='[Country].[Name]' value='&quot;India&quot;' />
+      </semantic-values>
+      <object-graph />
+    </datasource>
+    <datasource caption='Weather+ (actvtydataset)' inline='true' name='federated.0olupax0wstrh91e1i5t70xnk8ky' version='18.1'>
+      <connection class='federated'>
+        <named-connections>
+          <named-connection caption='actvtydataset' name='excel-direct.1kmw8z41m4vq4817gkgc41id9klt'>
+            <connection class='excel-direct' cleaning='no' compat='no' dataRefreshTime='' filename='C:/Users/annam/Downloads/actvtydataset.xlsx' interpretationMode='0' password='' server='' validate='no' />
+          </named-connection>
+        </named-connections>
+        <relation type='collection'>
+          <relation connection='excel-direct.1kmw8z41m4vq4817gkgc41id9klt' name='events' table='[events$]' type='table'>
+            <columns gridOrigin='A1:G6:no:A1:G6:0' header='yes' outcome='6'>
+              <column datatype='integer' name='event_id' ordinal='0' />
+              <column datatype='date' name='event_date' ordinal='1' />
+              <column datatype='string' name='event_type' ordinal='2' />
+              <column datatype='string' name='venue' ordinal='3' />
+              <column datatype='real' name='lat' ordinal='4' />
+              <column datatype='real' name='lon' ordinal='5' />
+              <column datatype='integer' name='attendees' ordinal='6' />
+            </columns>
+          </relation>
+          <relation connection='excel-direct.1kmw8z41m4vq4817gkgc41id9klt' name='Weather' table='[Weather$]' type='table'>
+            <columns gridOrigin='A1:C6:no:A1:C6:0' header='yes' outcome='6'>
+              <column datatype='date' name='date' ordinal='0' />
+              <column datatype='integer' name='rain_mm' ordinal='1' />
+              <column datatype='integer' name='temp_c' ordinal='2' />
+            </columns>
+          </relation>
+        </relation>
+        <metadata-records>
+          <metadata-record class='capability'>
+            <remote-name />
+            <remote-type>0</remote-type>
+            <parent-name>[events]</parent-name>
+            <remote-alias />
+            <aggregation>Count</aggregation>
+            <contains-null>true</contains-null>
+            <attributes>
+              <attribute datatype='integer' name='context'>0</attribute>
+              <attribute datatype='string' name='gridOrigin'>&quot;A1:G6:no:A1:G6:0&quot;</attribute>
+              <attribute datatype='boolean' name='header'>true</attribute>
+              <attribute datatype='integer' name='outcome'>6</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='capability'>
+            <remote-name />
+            <remote-type>0</remote-type>
+            <parent-name>[Weather]</parent-name>
+            <remote-alias />
+            <aggregation>Count</aggregation>
+            <contains-null>true</contains-null>
+            <attributes>
+              <attribute datatype='integer' name='context'>0</attribute>
+              <attribute datatype='string' name='gridOrigin'>&quot;A1:C6:no:A1:C6:0&quot;</attribute>
+              <attribute datatype='boolean' name='header'>true</attribute>
+              <attribute datatype='integer' name='outcome'>6</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>event_id</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[event_id]</local-name>
+            <parent-name>[events]</parent-name>
+            <remote-alias>event_id</remote-alias>
+            <ordinal>0</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;I8&quot;</attribute>
+            </attributes>
+            <object-id>[events_AC28C28660F244EFAB5B227A58E05723]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>event_date</remote-name>
+            <remote-type>7</remote-type>
+            <local-name>[event_date]</local-name>
+            <parent-name>[events]</parent-name>
+            <remote-alias>event_date</remote-alias>
+            <ordinal>1</ordinal>
+            <local-type>date</local-type>
+            <aggregation>Year</aggregation>
+            <contains-null>true</contains-null>
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;DATE&quot;</attribute>
+            </attributes>
+            <object-id>[events_AC28C28660F244EFAB5B227A58E05723]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>event_type</remote-name>
+            <remote-type>130</remote-type>
+            <local-name>[event_type]</local-name>
+            <parent-name>[events]</parent-name>
+            <remote-alias>event_type</remote-alias>
+            <ordinal>2</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <contains-null>true</contains-null>
+            <collation flag='1' name='LEN_RIN_S2' />
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;WSTR&quot;</attribute>
+            </attributes>
+            <object-id>[events_AC28C28660F244EFAB5B227A58E05723]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>venue</remote-name>
+            <remote-type>130</remote-type>
+            <local-name>[venue]</local-name>
+            <parent-name>[events]</parent-name>
+            <remote-alias>venue</remote-alias>
+            <ordinal>3</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <contains-null>true</contains-null>
+            <collation flag='1' name='LEN_RIN_S2' />
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;WSTR&quot;</attribute>
+            </attributes>
+            <object-id>[events_AC28C28660F244EFAB5B227A58E05723]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>lat</remote-name>
+            <remote-type>5</remote-type>
+            <local-name>[lat]</local-name>
+            <parent-name>[events]</parent-name>
+            <remote-alias>lat</remote-alias>
+            <ordinal>4</ordinal>
+            <local-type>real</local-type>
+            <aggregation>Sum</aggregation>
+            <precision>15</precision>
+            <contains-null>true</contains-null>
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;R8&quot;</attribute>
+            </attributes>
+            <object-id>[events_AC28C28660F244EFAB5B227A58E05723]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>lon</remote-name>
+            <remote-type>5</remote-type>
+            <local-name>[lon]</local-name>
+            <parent-name>[events]</parent-name>
+            <remote-alias>lon</remote-alias>
+            <ordinal>5</ordinal>
+            <local-type>real</local-type>
+            <aggregation>Sum</aggregation>
+            <precision>15</precision>
+            <contains-null>true</contains-null>
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;R8&quot;</attribute>
+            </attributes>
+            <object-id>[events_AC28C28660F244EFAB5B227A58E05723]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>attendees</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[attendees]</local-name>
+            <parent-name>[events]</parent-name>
+            <remote-alias>attendees</remote-alias>
+            <ordinal>6</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;I8&quot;</attribute>
+            </attributes>
+            <object-id>[events_AC28C28660F244EFAB5B227A58E05723]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>date</remote-name>
+            <remote-type>7</remote-type>
+            <local-name>[date]</local-name>
+            <parent-name>[Weather]</parent-name>
+            <remote-alias>date</remote-alias>
+            <ordinal>7</ordinal>
+            <local-type>date</local-type>
+            <aggregation>Year</aggregation>
+            <contains-null>true</contains-null>
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;DATE&quot;</attribute>
+            </attributes>
+            <object-id>[Weather_105679F12CA941DB8B02A4AA968C8022]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>rain_mm</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[rain_mm]</local-name>
+            <parent-name>[Weather]</parent-name>
+            <remote-alias>rain_mm</remote-alias>
+            <ordinal>8</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;I8&quot;</attribute>
+            </attributes>
+            <object-id>[Weather_105679F12CA941DB8B02A4AA968C8022]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>temp_c</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[temp_c]</local-name>
+            <parent-name>[Weather]</parent-name>
+            <remote-alias>temp_c</remote-alias>
+            <ordinal>9</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;I8&quot;</attribute>
+            </attributes>
+            <object-id>[Weather_105679F12CA941DB8B02A4AA968C8022]</object-id>
+          </metadata-record>
+        </metadata-records>
+      </connection>
+      <aliases enabled='yes' />
+      <column caption='attendance_per_rain' datatype='real' name='[Calculation_1287284082712576]' role='measure' type='quantitative'>
+        <calculation class='tableau' formula='[attendees] / ([rain_mm] + 1)' />
+      </column>
+      <column caption='weather_flag' datatype='string' name='[Calculation_1287284082937857]' role='dimension' type='nominal'>
+        <calculation class='tableau' formula='IF [rain_mm] &gt; 5 THEN &quot;Rainy&quot; ELSE &quot;Dry&quot; END' />
+      </column>
+      <column caption='Weather' datatype='table' name='[__tableau_internal_object_id__].[Weather_105679F12CA941DB8B02A4AA968C8022]' role='measure' type='quantitative' />
+      <column caption='events' datatype='table' name='[__tableau_internal_object_id__].[events_AC28C28660F244EFAB5B227A58E05723]' role='measure' type='quantitative' />
+      <column caption='Attendees' datatype='integer' name='[attendees]' role='measure' type='quantitative' />
+      <column caption='Date' datatype='date' name='[date]' role='dimension' type='ordinal' />
+      <column caption='Event Date' datatype='date' name='[event_date]' role='dimension' type='ordinal' />
+      <column caption='Event Id' datatype='integer' name='[event_id]' role='dimension' type='ordinal' />
+      <column caption='Event Type' datatype='string' name='[event_type]' role='dimension' type='nominal' />
+      <column aggregation='Avg' caption='Lat' datatype='real' name='[lat]' role='measure' semantic-role='[Geographical].[Latitude]' type='quantitative' />
+      <column aggregation='Avg' caption='Lon' datatype='real' name='[lon]' role='measure' semantic-role='[Geographical].[Longitude]' type='quantitative' />
+      <column caption='Rain Mm' datatype='integer' name='[rain_mm]' role='measure' type='quantitative' />
+      <column caption='Temp C' datatype='integer' name='[temp_c]' role='measure' type='quantitative' />
+      <column caption='Venue' datatype='string' name='[venue]' role='dimension' type='nominal' />
+      <column-instance column='[Forecast Indicator]' derivation='None' forecast-column-base='[Forecast Indicator]' forecast-column-type='forecast-indicator' name='[none:Forecast Indicator:nk]' pivot='key' type='nominal' />
+      <layout dim-ordering='alphabetic' measure-ordering='alphabetic' show-structure='true' />
+      <semantic-values>
+        <semantic-value key='[Country].[Name]' value='&quot;India&quot;' />
+      </semantic-values>
+      <default-sorts>
+        <manual-sort column='[none:Forecast Indicator:nk]' direction='ASC'>
+          <dictionary>
+            <bucket>&quot;Actual&quot;</bucket>
+            <bucket>&quot;Estimate&quot;</bucket>
+          </dictionary>
+        </manual-sort>
+      </default-sorts>
+      <object-graph>
+        <objects>
+          <object caption='Weather' id='Weather_105679F12CA941DB8B02A4AA968C8022'>
+            <properties context=''>
+              <relation connection='excel-direct.1kmw8z41m4vq4817gkgc41id9klt' name='Weather' table='[Weather$]' type='table'>
+                <columns gridOrigin='A1:C6:no:A1:C6:0' header='yes' outcome='6'>
+                  <column datatype='date' name='date' ordinal='0' />
+                  <column datatype='integer' name='rain_mm' ordinal='1' />
+                  <column datatype='integer' name='temp_c' ordinal='2' />
+                </columns>
+              </relation>
+            </properties>
+          </object>
+          <object caption='events' id='events_AC28C28660F244EFAB5B227A58E05723'>
+            <properties context=''>
+              <relation connection='excel-direct.1kmw8z41m4vq4817gkgc41id9klt' name='events' table='[events$]' type='table'>
+                <columns gridOrigin='A1:G6:no:A1:G6:0' header='yes' outcome='6'>
+                  <column datatype='integer' name='event_id' ordinal='0' />
+                  <column datatype='date' name='event_date' ordinal='1' />
+                  <column datatype='string' name='event_type' ordinal='2' />
+                  <column datatype='string' name='venue' ordinal='3' />
+                  <column datatype='real' name='lat' ordinal='4' />
+                  <column datatype='real' name='lon' ordinal='5' />
+                  <column datatype='integer' name='attendees' ordinal='6' />
+                </columns>
+              </relation>
+            </properties>
+          </object>
+        </objects>
+        <relationships>
+          <relationship>
+            <expression op='='>
+              <expression op='[event_date]' />
+              <expression op='[date]' />
+            </expression>
+            <first-end-point object-id='events_AC28C28660F244EFAB5B227A58E05723' />
+            <second-end-point object-id='Weather_105679F12CA941DB8B02A4AA968C8022' />
+          </relationship>
+        </relationships>
+      </object-graph>
+    </datasource>
+  </datasources>
+  <mapsources>
+    <mapsource name='Tableau' />
+  </mapsources>
+  <worksheets>
+    <worksheet name='Sheet 1'>
+      <table>
+        <view>
+          <datasources>
+            <datasource caption='Weather+ (actvtydataset)' name='federated.0olupax0wstrh91e1i5t70xnk8ky' />
+          </datasources>
+          <mapsources>
+            <mapsource name='Tableau' />
+          </mapsources>
+          <datasource-dependencies datasource='federated.0olupax0wstrh91e1i5t70xnk8ky'>
+            <column caption='weather_flag' datatype='string' name='[Calculation_1287284082937857]' role='dimension' type='nominal'>
+              <calculation class='tableau' formula='IF [rain_mm] &gt; 5 THEN &quot;Rainy&quot; ELSE &quot;Dry&quot; END' />
+            </column>
+            <column-instance column='[lat]' derivation='Avg' name='[avg:lat:qk]' pivot='key' type='quantitative' />
+            <column-instance column='[lon]' derivation='Avg' name='[avg:lon:qk]' pivot='key' type='quantitative' />
+            <column aggregation='Avg' caption='Lat' datatype='real' name='[lat]' role='measure' semantic-role='[Geographical].[Latitude]' type='quantitative' />
+            <column aggregation='Avg' caption='Lon' datatype='real' name='[lon]' role='measure' semantic-role='[Geographical].[Longitude]' type='quantitative' />
+            <column-instance column='[Calculation_1287284082937857]' derivation='None' name='[none:Calculation_1287284082937857:nk]' pivot='key' type='nominal' />
+            <column caption='Rain Mm' datatype='integer' name='[rain_mm]' role='measure' type='quantitative' />
+          </datasource-dependencies>
+          <aggregation value='true' />
+        </view>
+        <style>
+          <style-rule element='axis'>
+            <encoding attr='space' class='0' field='[federated.0olupax0wstrh91e1i5t70xnk8ky].[avg:lon:qk]' field-type='quantitative' max='8499939.8966404758' min='8495827.7688121479' projection='EPSG:3857' range-type='fixed' scope='cols' type='space' />
+            <encoding attr='space' class='0' field='[federated.0olupax0wstrh91e1i5t70xnk8ky].[avg:lat:qk]' field-type='quantitative' max='1121629.2320735513' min='1119257.4930651251' projection='EPSG:3857' range-type='fixed' scope='rows' type='space' />
+          </style-rule>
+          <style-rule element='map'>
+            <format attr='washout' value='0.0' />
+          </style-rule>
+        </style>
+        <panes>
+          <pane selection-relaxation-option='selection-relaxation-allow'>
+            <view>
+              <breakdown value='auto' />
+            </view>
+            <mark class='Automatic' />
+            <encodings>
+              <color column='[federated.0olupax0wstrh91e1i5t70xnk8ky].[none:Calculation_1287284082937857:nk]' />
+            </encodings>
+          </pane>
+        </panes>
+        <rows>[federated.0olupax0wstrh91e1i5t70xnk8ky].[avg:lat:qk]</rows>
+        <cols>[federated.0olupax0wstrh91e1i5t70xnk8ky].[avg:lon:qk]</cols>
+      </table>
+      <simple-id uuid='{31231389-0E95-4238-BF8A-6B1A340B67D3}' />
+    </worksheet>
+    <worksheet name='Sheet 2'>
+      <table>
+        <view>
+          <datasources>
+            <datasource caption='Weather+ (actvtydataset)' name='federated.0olupax0wstrh91e1i5t70xnk8ky' />
+          </datasources>
+          <datasource-dependencies datasource='federated.0olupax0wstrh91e1i5t70xnk8ky'>
+            <column caption='Attendees' datatype='integer' name='[attendees]' role='measure' type='quantitative' />
+            <column caption='Event Date' datatype='date' name='[event_date]' role='dimension' type='ordinal' />
+            <column-instance column='[attendees]' derivation='Sum' forecast-column-base='[sum:attendees:qk]' forecast-column-type='forecast-value' name='[fVal:sum:attendees:qk]' pivot='key' type='quantitative' />
+            <column-instance column='[attendees]' derivation='Sum' name='[sum:attendees:qk]' pivot='key' type='quantitative' />
+            <column-instance column='[event_date]' derivation='Day-Trunc' name='[tdy:event_date:qk]' pivot='key' type='quantitative' />
+          </datasource-dependencies>
+          <aggregation value='true' />
+        </view>
+        <style>
+          <style-rule element='axis'>
+            <encoding attr='space' class='0' field='[federated.0olupax0wstrh91e1i5t70xnk8ky].[tdy:event_date:qk]' field-type='quantitative' max='#2026-01-07 11:04:24.638#' min='#2025-12-30 03:55:40.408#' range-type='fixed' scope='cols' type='space' />
+            <encoding attr='space' class='0' field='[federated.0olupax0wstrh91e1i5t70xnk8ky].[fVal:sum:attendees:qk]' field-type='quantitative' max='206' min='-33' range-type='fixed' scope='rows' type='space' />
+          </style-rule>
+          <style-rule element='table'>
+            <format attr='show-null-value-warning' value='false' />
+          </style-rule>
+        </style>
+        <panes>
+          <pane selection-relaxation-option='selection-relaxation-allow'>
+            <view>
+              <breakdown value='auto' />
+            </view>
+            <mark class='Line' />
+          </pane>
+        </panes>
+        <rows>[federated.0olupax0wstrh91e1i5t70xnk8ky].[fVal:sum:attendees:qk]</rows>
+        <cols>[federated.0olupax0wstrh91e1i5t70xnk8ky].[tdy:event_date:qk]</cols>
+        <forecast-specification auto-forecast-agg='true' band-confidence-level='95.000000' enabled='true' fill-type='fill-missing' ignore-last='1' model-type='auto-season' range-type='auto' show-prediction-bands='true' />
+      </table>
+      <simple-id uuid='{52EE8FD4-85B3-4658-AB8C-50547C71F051}' />
+    </worksheet>
+  </worksheets>
+  <windows saved-dpi-scale-factor='1.25' source-height='63'>
+    <window class='worksheet' name='Sheet 1'>
+      <cards>
+        <edge name='left'>
+          <strip size='160'>
+            <card type='pages' />
+            <card type='filters' />
+            <card type='marks' />
+          </strip>
+        </edge>
+        <edge name='top'>
+          <strip size='2147483647'>
+            <card type='columns' />
+          </strip>
+          <strip size='2147483647'>
+            <card type='rows' />
+          </strip>
+          <strip size='2147483647'>
+            <card type='title' />
+          </strip>
+        </edge>
+        <edge name='right'>
+          <strip size='160'>
+            <card pane-specification-id='0' param='[federated.0olupax0wstrh91e1i5t70xnk8ky].[none:Calculation_1287284082937857:nk]' type='color' />
+          </strip>
+        </edge>
+      </cards>
+      <viewpoint>
+        <highlight>
+          <color-one-way>
+            <field>[federated.0olupax0wstrh91e1i5t70xnk8ky].[none:Calculation_1287284082937857:nk]</field>
+          </color-one-way>
+        </highlight>
+      </viewpoint>
+      <simple-id uuid='{4404279F-53C5-4DF4-967A-6B4290EF65FF}' />
+    </window>
+    <window class='worksheet' maximized='true' name='Sheet 2'>
+      <cards>
+        <edge name='left'>
+          <strip size='160'>
+            <card type='pages' />
+            <card type='filters' />
+            <card type='marks' />
+          </strip>
+        </edge>
+        <edge name='top'>
+          <strip size='2147483647'>
+            <card type='columns' />
+          </strip>
+          <strip size='2147483647'>
+            <card type='rows' />
+          </strip>
+          <strip size='2147483647'>
+            <card type='title' />
+          </strip>
+        </edge>
+      </cards>
+      <viewpoint>
+        <highlight>
+          <color-one-way>
+            <field>[federated.0olupax0wstrh91e1i5t70xnk8ky].[yr:event_date:ok]</field>
+          </color-one-way>
+        </highlight>
+      </viewpoint>
+      <simple-id uuid='{B4C2FC90-07B0-4D9B-85B8-95286DC81CD1}' />
+    </window>
+  </windows>
+  <thumbnails>
+    <thumbnail height='192' name='Sheet 1' width='192'>
+      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
+      xTAu3i+cxQAAAABJRU5ErkJggg==
+    </thumbnail>
+    <thumbnail height='192' name='Sheet 2' width='192'>
+      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
+    </thumbnail>
+  </thumbnails>
+</workbook>
